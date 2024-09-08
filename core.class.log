@@ -1,0 +1,172 @@
+[handleMsg]:  {
+  key: {
+    remoteJid: '573208269050@s.whatsapp.net',
+    fromMe: false,
+    id: '3EB0A170D401FDAEB83469',
+    participant: undefined
+  },
+  messageTimestamp: 1725821673,
+  pushName: 'Said Andrés',
+  broadcast: false,
+  message: Message {
+    conversation: 'hola',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'hola',
+  from: '573208269050'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_9cde8045-6c01-4cdb-906e-41afb9e69a31',
+  keyword: 'key_9b389647-1674-4c51-bbe0-f691bbeecd38',
+  answer: '__call_action__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: 'a04349b50464a71caafc47b06f959501'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_6db8ccef-b2e7-4ead-8171-2dd537e1c53c',
+  keyword: 'ans_9cde8045-6c01-4cdb-906e-41afb9e69a31',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: 'dc8308edcd77006b30cd6b5d6b434aa0'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573208269050@s.whatsapp.net',
+    fromMe: false,
+    id: '3EB08EDA264B295FA59D34',
+    participant: undefined
+  },
+  messageTimestamp: 1725821681,
+  pushName: 'Said Andrés',
+  broadcast: false,
+  message: Message {
+    conversation: '1',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: '1',
+  from: '573208269050'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_6f1d09ff-9949-4c6d-b194-6bdd98af250a',
+  keyword: 'ans_6db8ccef-b2e7-4ead-8171-2dd537e1c53c',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '0d6fc2a1f13ed0de2f998bc073a8f328'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573208269050@s.whatsapp.net',
+    fromMe: false,
+    id: '3EB05FB87BE16D0482C5B4',
+    participant: undefined
+  },
+  messageTimestamp: 1725821687,
+  pushName: 'Said Andrés',
+  broadcast: false,
+  message: Message {
+    conversation: '2',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: '2',
+  from: '573208269050'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_aad7fe84-60a5-4c44-a057-4080dca16387',
+  keyword: 'ans_6f1d09ff-9949-4c6d-b194-6bdd98af250a',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '3664d97c3721826f70c6e7b661e34f5b'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573208269050@s.whatsapp.net',
+    fromMe: false,
+    id: '3EB0E65AE55D53808DC077',
+    participant: undefined
+  },
+  messageTimestamp: 1725821696,
+  pushName: 'Said Andrés',
+  broadcast: false,
+  message: Message {
+    conversation: 'si',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'si',
+  from: '573208269050'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573208269050@s.whatsapp.net',
+    fromMe: false,
+    id: '3EB07D38D8BD46AF783EA8',
+    participant: undefined
+  },
+  messageTimestamp: 1725821706,
+  pushName: 'Said Andrés',
+  broadcast: false,
+  message: Message {
+    conversation: 'calle 11 # 26 35',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'calle 11 # 26 35',
+  from: '573208269050'
+}
