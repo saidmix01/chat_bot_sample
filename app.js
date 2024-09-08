@@ -14,12 +14,13 @@ const flowPrincipal = addKeyword(['hola', 'ole', 'alo'])
     .addAction(async (ctx, { flowDynamic, endFlow, state }) => {
         try {
             const response_save_statistics = await save_statistics({
-                st_information:ctx,
-                st_status:1,
+                st_information: ctx,
+                st_status: 1,
+                us_id: 1,
                 st_create_date: new Date()
             });
-            if(! response_save_statistics.status) throw new Error(response_save_statistics.message);
-            await state.update({st_id:response_save_statistics.data})
+            if (!response_save_statistics.status) throw new Error(response_save_statistics.message);
+            await state.update({ st_id: response_save_statistics.data })
             const response_store = await get_store_information({ sto_id: 1, us_id: 1 });
             const response_questions = await get_questions({ "cq.us_id": 1, "cq.chq_parent": 0 });
             if (!response_questions.status) throw new Error(response_questions.message);
@@ -38,8 +39,8 @@ const flowPrincipal = addKeyword(['hola', 'ole', 'alo'])
             console.log(error);
             const get_stage = await state.getMyState();
             await update_statistics({
-                st_status:4,
-                st_log:error,
+                st_status: 4,
+                st_log: error,
                 st_id: get_stage.st_id
             })
             return endFlow(emoji.emojify(msg_error));
@@ -67,17 +68,17 @@ const flowPrincipal = addKeyword(['hola', 'ole', 'alo'])
             //save stage
             await state.update({ valid_opt_products });
             const update_response = await update_statistics({
-                st_status:2,
+                st_status: 2,
                 st_id: get_stage.st_id
             });
-            if(! update_response.status) throw new Error(update_response.message);
+            if (!update_response.status) throw new Error(update_response.message);
             return await flowDynamic(`Selecciona la opción que deseas… 😊👇`);
         } catch (error) {
             console.log(error);
             const get_stage = await state.getMyState();
             await update_statistics({
-                st_status:4,
-                st_log:error,
+                st_status: 4,
+                st_log: error,
                 st_id: get_stage.st_id
             })
             return endFlow(emoji.emojify(msg_error));
@@ -101,18 +102,18 @@ const flowPrincipal = addKeyword(['hola', 'ole', 'alo'])
                 for (const element of response_opt.data) {
                     await flowDynamic(emoji.emojify(`${element.opt_description}`));
                     let resp = "";
-                    if(element.opt_order == 1){
+                    if (element.opt_order == 1) {
                         resp = "si"
-                    }else{
+                    } else {
                         resp = "no";
                     }
                     valid_yes_no_opt.push(resp);
                 }
                 const update_response = await update_statistics({
-                    st_status:2,
+                    st_status: 2,
                     st_id: get_stage.st_id
                 });
-                if(! update_response.status) throw new Error(update_response.message);
+                if (!update_response.status) throw new Error(update_response.message);
                 await state.update({ valid_yes_no_opt });
             } else {
                 return fallBack();
@@ -121,8 +122,8 @@ const flowPrincipal = addKeyword(['hola', 'ole', 'alo'])
             console.log(error);
             const get_stage = await state.getMyState();
             await update_statistics({
-                st_status:4,
-                st_log:error,
+                st_status: 4,
+                st_log: error,
                 st_id: get_stage.st_id
             })
             return endFlow(emoji.emojify(msg_error));
@@ -133,10 +134,10 @@ const flowPrincipal = addKeyword(['hola', 'ole', 'alo'])
             const get_stage = await state.getMyState();
             if (get_stage.valid_yes_no_opt.includes(ctx.body)) {
                 let opt = ctx.body == 'si' ? 1 : 2;
-                const response_questions = await get_questions({ "cq.us_id": 1, "cq.chq_parent": 6, "cq.chq_order":opt });
+                const response_questions = await get_questions({ "cq.us_id": 1, "cq.chq_parent": 6, "cq.chq_order": opt });
                 if (!response_questions.status) throw new Error(response_questions.message);
                 const valid_address_send = [];
-                
+
                 for (const opt of response_questions.data) {
                     await flowDynamic(emoji.emojify(opt.chq_text));
                     valid_address_send.push(opt.chq_order);
@@ -144,17 +145,17 @@ const flowPrincipal = addKeyword(['hola', 'ole', 'alo'])
                 await state.update({ valid_opt_send: valid_address_send });
             }
             const update_response = await update_statistics({
-                st_status:3,
+                st_status: 3,
                 st_id: get_stage.st_id
             });
-            if(! update_response.status) throw new Error(update_response.message);
+            if (!update_response.status) throw new Error(update_response.message);
             return endFlow(emoji.emojify(`¡Gracias por elegir nuestros productos/servicios! Valoramos tu confianza y estamos emocionados de tenerte como parte de nuestra comunidad. Si tienes alguna pregunta o necesitas asistencia, no dudes en contactarnos. ¡Que disfrutes de tu nueva adquisición! 🎉`));
         } catch (error) {
             console.log(error);
             const get_stage = await state.getMyState();
             await update_statistics({
-                st_status:4,
-                st_log:error,
+                st_status: 4,
+                st_log: error,
                 st_id: get_stage.st_id
             })
             return endFlow(emoji.emojify(msg_error));
